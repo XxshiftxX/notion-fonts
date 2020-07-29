@@ -9,7 +9,7 @@ const changeFont = (selector, font) => {
     if (!style.match(fontFamilyRegex)) {
       return;
     }
-    const applied = style.replace(fontFamilyRegex, `font-family: ${font}, $1`);
+    const applied = style.replace(fontFamilyRegex, `font-family: ${font}, $1;`);
     $(this).attr('style', applied);
     $(this).change(function () { $(this).attr('style', applied); });
   })
