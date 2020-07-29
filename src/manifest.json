@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "NotionFontchanger",
+  "description": "Notion의 폰트를 변경해주는 확장 프로그램",
+  "version": "0.1",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Notion Fonts"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://www.notion.so/*"
+  ],
+  "background": {
+    "scripts": [
+      "js/jquery.min.js",
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.notion.so/*"
+      ],
+      "js": [
+        "js/jquery.min.js",
+        "js/fontmanager.js"
+      ]
+    }
+  ]
+}
